@@ -3,6 +3,10 @@ from __future__ import annotations
 import os
 import random
 from typing import List, Optional, Tuple
+from dotenv import load_dotenv
+
+# 환경 변수 로드
+load_dotenv()
 
 import numpy as np
 import pandas as pd
