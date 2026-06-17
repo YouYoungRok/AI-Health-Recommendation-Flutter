@@ -16,7 +16,7 @@ from sklearn.preprocessing import StandardScaler
 from training_data import X
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-FOOD_XLSX = os.path.join(BASE_DIR, "food.xlsx")
+FOOD_XLSX = os.path.join(BASE_DIR, "food_final.xlsx")
 
 DEFAULT_IMAGE = "assets/images/Chicken_breast.png"
 IMAGE_RULES = [
