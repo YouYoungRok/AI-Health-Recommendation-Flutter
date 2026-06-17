@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 import os
-import random
-from typing import List, Optional, Tuple
 from dotenv import load_dotenv
 
 # 환경 변수 로드
 load_dotenv()
+import random
+from typing import List, Optional, Tuple
+
 
 import numpy as np
 import pandas as pd
@@ -610,3 +611,9 @@ def modify_plan(req: ModifyRequest) -> dict:
         "coachResponse": coach_response,
         "modelEvaluation": ai.evaluation,
     }
+if __name__ == "__main__":
+ import uvicorn
+ # 환경 변수가 없으면 기본값인 0.0.0.0과 8000을 사용하도록 설정
+ host = os.getenv("SERVER_HOST", "0.0.0.0")
+ port = int(os.getenv("SERVER_PORT", 8000))
+ uvicorn.run(app, host=host, port=port)
