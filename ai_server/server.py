@@ -558,6 +558,8 @@ def modify_plan(req: ModifyRequest) -> dict:
     chat_intent = ai.predict_chat_intent(req.request)
 
     # 채팅 의도에 따라 AI 분석 결과를 일부 조정합니다.
+    # TODO: 프로토타입 단계의 데이터 부족 보완을 위한 임시 규칙 기반 필터링. 
+    # 추후 Transformer 기반의 NER(개체명 인식) 및 자연어 슬롯 필링(Slot-filling) 모델로 대체 예정.
     text = req.request.lower()
     if chat_intent["label"] == "식단 유형 변경":
         if "저탄" in text or "감량" in text or "다이어트" in text:
